@@ -13,12 +13,12 @@ gem 'compass'
 # gem 'compass-susy-plugin' # Susy
 
 # Markdown and Textile
-# gem 'rdiscount' # Markdown
+gem 'rdiscount' # Markdown
 # gem 'RedCloth'  # Textile
 
 # Other templating languages
+gem 'haml'
 # gem 'erubis'
-# gem 'haml'
 # gem 'slim'
 # gem 'radius'
 # gem 'less'
