@@ -1,12 +1,8 @@
 What is this?
 =============
 
-This is a simple HTML prototype written in HAML or ERB that is designed to be
-viewed with Serve.
-
-What is Serve? Serve is an open-source rapid prototyping framework for Web
-applications. It makes it easy to prototype functionality without writing a
-single line of backend code.
+This is a super-simple HTML prototype written in Haml that is designed to be
+viewed with [Serve](http://get-serve.com/).
 
 
 How do I install and run Serve?
@@ -34,14 +30,15 @@ Web browser at this URL:
 <http://localhost:4000>
 
 
-Compass and Sass
-----------------
+RubyGems
+--------
 
-This prototype uses Compass and Sass to generate CSS. Both are distributed as
-Ruby gems and can be easily installed from the command prompt. Since the
-Compass gem depends on Sass, you can install them both with one command:
+This prototype uses [Compass](http://compass-style.org) & 
+[Sass](http://sass-lang.org) to generate CSS, and Haml & Markdown 
+to generate HTML. Because we're using [Bundler](http://gembundler.com/), we 
+can install all the required gems by typing:
 
-    gem install compass
+    bundle install
 
 Learn more about Sass:
 
@@ -50,6 +47,14 @@ Learn more about Sass:
 Learn more about Compass:
 
 <http://compass-style.org>
+
+Learn more about Haml:
+
+<http://haml-lang.com/>
+
+Learn more about Markdown:
+
+<http://daringfireball.net/projects/markdown/syntax>
 
 
 Rack and Passenger
@@ -82,6 +87,6 @@ directory where you would like your HTML and CSS generated.
 Learning More
 -------------
 
-You can learn more about Serve on the GitHub project page:
+You can learn more about Serve on its GitHub project page:
 
 <http://github.com/jlong/serve>
