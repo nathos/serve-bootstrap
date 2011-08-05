@@ -1,8 +1,8 @@
 What is this?
 =============
 
-This is a super-simple HTML prototype written in Haml that is designed to be
-viewed with [Serve](http://get-serve.com/).
+Serve Bootstrap is a super-simple HTML prototype written in Haml that's 
+designed to be viewed with [Serve](http://get-serve.com/).
 
 
 How do I install and run Serve?
@@ -40,21 +40,13 @@ can install all the required gems by typing:
 
     bundle install
 
-Learn more about Sass:
+Learn more about **Sass**: <http://sass-lang.org>
 
-<http://sass-lang.org>
+Learn more about **Compass**: <http://compass-style.org>
 
-Learn more about Compass:
+Learn more about **Haml**: <http://haml-lang.com/>
 
-<http://compass-style.org>
-
-Learn more about Haml:
-
-<http://haml-lang.com/>
-
-Learn more about Markdown:
-
-<http://daringfireball.net/projects/markdown/syntax>
+Learn more about **Markdown**: <http://daringfireball.net/projects/markdown/syntax>
 
 
 Rack and Passenger
