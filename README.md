@@ -1,8 +1,11 @@
 What is this?
 =============
 
-Serve Bootstrap is a super-simple HTML prototype written in Haml that's 
+Serve Bootstrap is a stripped-down website prototype starting point that's 
 designed to be viewed with [Serve](http://get-serve.com/).
+
+It features [HTML5 Boilerplate](http://html5boilerplate.com/), Haml, Sass, 
+your choice of grid frameworks, and lots of best practices.
 
 
 How do I install and run Serve?
