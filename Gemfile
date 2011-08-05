@@ -8,6 +8,10 @@ gem 'serve', '1.5.1'
 # Use Compass and Sass
 gem 'compass'
 
+# Compass plugins
+# gem 'compass-960-plugin' # 960.gs
+# gem 'compass-susy-plugin' # Susy
+
 # Markdown and Textile
 # gem 'rdiscount' # Markdown
 # gem 'RedCloth'  # Textile
