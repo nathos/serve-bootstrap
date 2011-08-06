@@ -1,11 +1,11 @@
 What is this?
 =============
 
-Serve Bootstrap is a stripped-down website prototype starting point that's 
-designed to be viewed with [Serve](http://get-serve.com/).
+Serve Bootstrap is a stripped-down website prototype starting point for 
+[Serve](http://get-serve.com/).
 
 It features [HTML5 Boilerplate](http://html5boilerplate.com/), Haml, Sass, 
-your choice of grid frameworks, and lots of best practices.
+Compass, your choice of grid frameworks, and lots of best practices.
 
 
 How do I install and run Serve?
@@ -19,9 +19,15 @@ page provides instructions for getting Ruby setup on different platforms:
 
 After you have Ruby installed, open up the command prompt and type:
 
-    gem install serve
+    gem install bundler
 
 (OSX and Unix users may need to prefix the command with `sudo`.)
+
+Because we're using [Bundler](http://gembundler.com/), to handle gem dependencies, 
+we can install all the required gems (including Serve itself!) by 'cd'-ing to the 
+Serve Bootstrap directory and typing:
+
+    bundle install
 
 After Serve is installed, you can start it up in a given directory like this:
 
@@ -33,15 +39,11 @@ Web browser at this URL:
 <http://localhost:4000>
 
 
-RubyGems
---------
+Bundled Gems
+------------
 
-This prototype uses [Compass](http://compass-style.org) & 
-[Sass](http://sass-lang.org) to generate CSS, and Haml & Markdown 
-to generate HTML. Because we're using [Bundler](http://gembundler.com/), we 
-can install all the required gems by typing:
-
-    bundle install
+Serve Bootstrap uses [Compass](http://compass-style.org) & 
+[Sass](http://sass-lang.org) to generate CSS, and Haml & Markdown to generate HTML. 
 
 Learn more about **Sass**: <http://sass-lang.org>
 
@@ -66,12 +68,7 @@ information about using Serve and Passenger see:
 Exporting
 ---------
 
-To export this project to pure HTML and CSS you will need the prerelease
-version of Serve. To get started with the prerelease version:
-
-    gem install --pre serve
-
-To export your project, use the new "export" command:
+To export your project, use the "export" command:
 
     serve export <project>:<output>
 
