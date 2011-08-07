@@ -23,7 +23,7 @@ After you have Ruby installed, open up the command prompt and type:
 
 (OSX and Unix users may need to prefix the command with `sudo`.)
 
-Because we're using [Bundler](http://gembundler.com/), to handle gem dependencies, 
+Because we're using [Bundler](http://gembundler.com/) to handle gem dependencies, 
 we can install all the required gems (including Serve itself!) by 'cd'-ing to the 
 Serve Bootstrap directory and typing:
 

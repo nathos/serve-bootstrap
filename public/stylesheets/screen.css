@@ -223,22 +223,24 @@ table {
   border-spacing: 0;
 }
 
-body {
+.newproject, header, footer {
   margin: 0 auto;
   min-width: 300px;
   max-width: 600px;
-  padding: 15px 150px;
+  padding: 0 150px;
 }
 
 header {
   color: #999999;
   text-transform: uppercase;
+  padding-top: 15px;
 }
 
 footer {
   color: #cccccc;
   font-weight: bold;
   text-align: right;
+  padding-bottom: 15px;
 }
 
 .ir {
