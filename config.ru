@@ -30,6 +30,16 @@ if ENV['RACK_ENV'] != 'production'
   use Sass::Plugin::Rack  # Sass Middleware
 end
 
+# Tweak some Haml configuration options (HTML5 output, double quoted attributes)
+require 'haml'
+class Haml::Engine
+  alias old_initialize initialize
+  def initialize(lines, options)
+    options.update(:format => :html5, :attr_wrapper => '"')
+    old_initialize(lines, options)
+  end
+end
+
 # Other Rack Middleware
 use Rack::ShowStatus      # Nice looking 404s and other messages
 use Rack::ShowExceptions  # Nice looking errors
