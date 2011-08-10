@@ -31,6 +31,7 @@ if ENV['RACK_ENV'] != 'production'
 end
 
 # Tweak some Haml configuration options (HTML5 output, double quoted attributes)
+# Remove this if you choose to disable Haml
 require 'haml'
 class Haml::Engine
   alias old_initialize initialize
