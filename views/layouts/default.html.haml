@@ -3,8 +3,8 @@
 /[if lt IE 7 ]         <html class="no-js ie6" lang="en">
 /[if IE 7 ]            <html class="no-js ie7" lang="en">
 /[if IE 8 ]            <html class="no-js ie8" lang="en">
-
-<!--[if (gte IE 9)|!(IE)]!-->
+-# Consider adding an manifest.appcache: h5bp.com/d/Offline
+<!--[if gt IE 8]><!-->
 %html{:class => "no-js", :lang => "en"}
   <!--<![endif]-->
   %head
@@ -21,22 +21,21 @@
     %meta{:name => "author", :content => ""}
 
     -# Mobile viewport optimized: j.mp/bplateviewport
-    -# disabled because I think it does some funky stuff -- @nathos
-    -# %meta{:name =>"viewport", :content => "width=device-width, initial-scale=1.0"}
+    -# * disabled because I think the zoomed-in behavior is sucks -- @nathos *
+    -# %meta{:name =>"viewport", :content => "width=device-width,initial-scale=1"}
 
-    -# Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references
-    -# %link{:rel => "shortcut icon", :href => "/favicon.ico"}
-    -# %link{:rel => "apple-touch-icon", :href => "/apple-touch-icon.png"}
+    -# Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons
 
     -# CSS: implied media="all"
+    -# * our CSS will be concatened and minified by Sass. Hooray! -- @nathos *
     %link{:rel => "stylesheet", :href => "/stylesheets/screen.css"}
 
-    -# Uncomment if you are specifically targeting less enabled mobile browsers
-    -# %link{:rel => "stylesheet", :media => "handheld", :href => "css/handheld.css?v=2"}
+    -# More ideas for your <head> here: h5bp.com/d/head-Tips
 
-    -# All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects
-    %script{:src => "/javascripts/libs/modernizr-2.0.min.js"}
-    %script{:src => "/javascripts/libs/respond.min.js"}
+    -# All JavaScript at the bottom, except for Modernizr / Respond
+    -# Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries
+    -# For optimal performance, use a custom Modernizr build: www.modernizr.com/download/
+    %script{:src => "/javascripts/libs/modernizr-2.0.6.min.js"}
 
   %body
     .container
@@ -53,24 +52,24 @@
     -# JavaScript at the bottom for fast page loading
 
     -# Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary
-    %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"}
+    %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"}
     :javascript
-      window.jQuery || document.write("<script src='/javascripts/libs/jquery-1.6.1.min.js'>\x3C/script>")
+      window.jQuery || document.write("<script src='/javascripts/libs/jquery-1.6.2.min.js'>\x3C/script>")
 
-    -# scripts concatenated and minified via ant build script
+    -# scripts concatenated and minified
     %script{:src => "/javascripts/plugins.js"}
     %script{:src => "/javascripts/script.js"}
 
-    -# mathiasbynens.be/notes/async-analytics-snippet Change UA-XXXXX-X to be your site's ID
+    -# Change UA-XXXXX-X to be your site's ID
     :javascript
-      var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
-      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-      g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
-      s.parentNode.insertBefore(g,s)}(document,"script"));
+      window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
+      Modernizr.load({
+        load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+      });
     
     -# Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
     -# chromium.org/developers/how-tos/chrome-frame-getting-started
     /[if lt IE 7 ]
-      %script{:src => "//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"}
+      %script{:src => "//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"}
       :javascript
-        window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})
+        window.attachEvent("onload",function(){CFInstall.check({mode:'overlay'})})
