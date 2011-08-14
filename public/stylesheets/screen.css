@@ -2,16 +2,23 @@ article, aside, details, figcaption, figure, footer, header, hgroup, nav, sectio
   display: block;
 }
 
-audio[controls], canvas, video {
+audio, canvas, video {
   display: inline-block;
   *display: inline;
   *zoom: 1;
 }
 
+audio:not([controls]) {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
 html {
   font-size: 100%;
   overflow-y: scroll;
-  -webkit-tap-highlight-color: #ff5e99;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
@@ -28,13 +35,13 @@ body, button, input, select, textarea {
 }
 
 ::-moz-selection {
-  background: #ff5e99;
+  background: #fe57a1;
   color: white;
   text-shadow: none;
 }
 
 ::selection {
-  background: #ff5e99;
+  background: #fe57a1;
   color: white;
   text-shadow: none;
 }
@@ -44,6 +51,9 @@ a {
 }
 a:visited {
   color: #551a8b;
+}
+a:hover {
+  color: #0066ee;
 }
 a:focus {
   outline: thin dotted;
@@ -140,6 +150,7 @@ dd {
 
 nav ul, nav ol {
   list-style: none;
+  list-style-image: none;
   margin: 0;
   padding: 0;
 }
@@ -147,6 +158,7 @@ nav ul, nav ol {
 img {
   border: 0;
   -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
 }
 
 svg:not(:root) {
@@ -167,14 +179,14 @@ fieldset {
   padding: 0;
 }
 
+label {
+  cursor: pointer;
+}
+
 legend {
   border: 0;
   *margin-left: -7px;
   padding: 0;
-}
-
-label {
-  cursor: pointer;
 }
 
 button, input, select, textarea {
@@ -189,6 +201,10 @@ button, input {
   *overflow: visible;
 }
 
+table button, table input {
+  *overflow: auto;
+}
+
 button, input[type="button"], input[type="reset"], input[type="submit"] {
   cursor: pointer;
   -webkit-appearance: button;
@@ -199,9 +215,14 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 input[type="search"] {
+  -webkit-appearance: textfield;
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 button::-moz-focus-inner, input::-moz-focus-inner {
@@ -212,6 +233,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 textarea {
   overflow: auto;
   vertical-align: top;
+  resize: vertical;
 }
 
 input:invalid, textarea:invalid {
@@ -221,6 +243,10 @@ input:invalid, textarea:invalid {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+td {
+  vertical-align: top;
 }
 
 .newproject, header, footer {
@@ -245,8 +271,10 @@ footer {
 
 .ir {
   display: block;
+  border: 0;
   text-indent: -999em;
   overflow: hidden;
+  background-color: transparent;
   background-repeat: no-repeat;
   text-align: left;
   direction: ltr;
@@ -256,7 +284,7 @@ footer {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
   visibility: hidden;
 }
 
@@ -295,17 +323,16 @@ footer {
 }
 
 @media print {
-  a, a:visited {
-    color: #444444 !important;
-    text-decoration: underline;
-  }
-
   * {
     background: transparent !important;
     color: black !important;
     text-shadow: none !important;
     filter: none !important;
     -ms-filter: none !important;
+  }
+
+  a, a:visited {
+    text-decoration: underline;
   }
 
   a[href]:after {
